@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>All Employee</h2>
+            <a th:href="@{/excel}"> <input type="button" value="Create Excell" class="btn btn-infor"> </a> &nbsp;&nbsp;&nbsp;
+            <a th:href="@{/pdf}"> <input type="button" value="Create Pdf" class="btn btn-denger"> </a>
+            <div>
+                <table id="employee" class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Address</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="employee : ${employees}">
+                        <th th:text="${employee.name}"></th>
+                        <th th:text="${employee.email}"></th>
+                        <th th:text="${employee.mobile}"> </th>
+                        <th th:text="${employee.address}"></th>
+                    </tr>
+                    </tbody>
+
+                </table>
+                <!-- /#employee -->
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+
+
+
+
+
+
+
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
